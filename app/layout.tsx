@@ -51,6 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`light ${fredoka.variable} ${nunito.variable} bg-background`}>
+      <head>
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+      </head>
       <body className="font-sans antialiased">
         <MetaPixel />
 
