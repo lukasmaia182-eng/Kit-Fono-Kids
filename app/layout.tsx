@@ -64,10 +64,12 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
+
             fbq('init', '${META_PIXEL_ID}');
             fbq('track', 'PageView');
           `}
         </Script>
+
         <noscript>
           <img
             height="1"
@@ -77,7 +79,9 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+
         {children}
+
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
