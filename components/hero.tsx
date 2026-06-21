@@ -18,7 +18,7 @@ export function Hero() {
       <div className="mx-auto mt-8 max-w-3xl">
         <Image
           src="/kit/hero-banner.png"
-          alt="Kit Completo para Fonoaudiologia Infantil — atividades prontas para imprimir, aplicar e encantar nas sessões. Material 100% digital com mais de 100 atividades prontas."
+          alt="Mais de 100 atividades de Fonoaudiologia Infantil — material terapêutico para sessões de fonoaudiologia. De R$ 97,00 por apenas R$ 10,00. Pagamento seguro e acesso por e-mail."
           width={1232}
           height={1232}
           className="h-auto w-full"

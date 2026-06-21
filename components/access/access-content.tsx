@@ -1,7 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Download, Gift, Printer, FileText, ArrowRight } from "lucide-react"
+import { Download, Gift, Printer, FileText, ArrowRight, BookOpen, Layers } from "lucide-react"
 import { categorias, atividadesPorCategoria } from "@/lib/activities"
+import { flashcards } from "@/lib/flashcards"
+import { ManualSheet } from "@/components/access/manual-sheet"
+import { RoteiroSheet } from "@/components/access/roteiro-sheet"
+import { FlashcardSheet } from "@/components/access/flashcard-sheet"
 
 const bonuses = [
   { img: "/kit/b1.png", title: "Atividades para enviar para casa" },
@@ -33,6 +37,24 @@ export function AccessContent() {
                 <p className="text-sm leading-relaxed text-muted-foreground">{step.text}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Manual e orientações */}
+        <section className="mb-14" aria-labelledby="manual-title">
+          <div className="mb-8 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-blue/10 px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-wide text-brand-blue">
+              <BookOpen className="size-4" aria-hidden="true" />
+              Comece por aqui
+            </span>
+            <h2 id="manual-title" className="mt-3 font-heading text-2xl font-bold text-primary text-balance sm:text-3xl">
+              Manual e orientações de uso
+            </h2>
+          </div>
+
+          <div className="grid gap-10">
+            <ManualSheet />
+            <RoteiroSheet />
           </div>
         </section>
 
@@ -114,6 +136,31 @@ export function AccessContent() {
             )
           })}
         </div>
+
+        {/* Flashcards */}
+        <section className="mt-16" aria-labelledby="flashcards-title">
+          <div className="mb-8 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-green/15 px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-wide text-brand-green-dark">
+              <Layers className="size-4" aria-hidden="true" />
+              20 itens · frente e verso
+            </span>
+            <h2
+              id="flashcards-title"
+              className="mt-3 font-heading text-2xl font-bold text-primary text-balance sm:text-3xl"
+            >
+              Flashcards para imprimir
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground text-pretty">
+              10 temas com frente (figuras) e verso (orientações de aplicação). Imprima, recorte e plastifique.
+            </p>
+          </div>
+
+          <div className="grid gap-12">
+            {flashcards.map((f) => (
+              <FlashcardSheet key={f.slug} flashcard={f} />
+            ))}
+          </div>
+        </section>
 
         {/* Cartazes */}
         <section className="mt-16" aria-labelledby="cartazes-title">
