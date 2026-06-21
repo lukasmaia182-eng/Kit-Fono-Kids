@@ -1,7 +1,7 @@
 // Conteúdo dos 20 flashcards (10 temas com frente e verso),
 // baseado no material "Kit Fono Kids".
 
-export type CartaoFigura = { palavra: string; icone: string }
+export type CartaoFigura = { palavra: string; icone: string; imagem: string }
 
 export type Flashcard = {
   slug: string
@@ -29,12 +29,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Ajudar a criança a identificar, nomear e expressar as emoções, ampliando o vocabulário emocional e a comunicação dos sentimentos.",
     cartoes: [
-      { palavra: "Feliz", icone: "Smile" },
-      { palavra: "Triste", icone: "Frown" },
-      { palavra: "Bravo", icone: "Angry" },
-      { palavra: "Com medo", icone: "Ghost" },
-      { palavra: "Surpreso", icone: "Zap" },
-      { palavra: "Calmo", icone: "Leaf" },
+      { palavra: "Feliz", icone: "Smile", imagem: "/flashcards/emocoes-basicas-1.png" },
+      { palavra: "Triste", icone: "Frown", imagem: "/flashcards/emocoes-basicas-2.png" },
+      { palavra: "Bravo", icone: "Angry", imagem: "/flashcards/emocoes-basicas-3.png" },
+      { palavra: "Com medo", icone: "Ghost", imagem: "/flashcards/emocoes-basicas-4.png" },
+      { palavra: "Surpreso", icone: "Zap", imagem: "/flashcards/emocoes-basicas-5.png" },
+      { palavra: "Calmo", icone: "Leaf", imagem: "/flashcards/emocoes-basicas-6.png" },
     ],
     comoAplicar: [
       "Mostre uma figura por vez e pergunte: 'Como ele está se sentindo?'.",
@@ -54,12 +54,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Ampliar o vocabulário de animais familiares, trabalhando nomeação, sons onomatopaicos e associação figura-palavra.",
     cartoes: [
-      { palavra: "Cachorro", icone: "Dog" },
-      { palavra: "Gato", icone: "Cat" },
-      { palavra: "Pássaro", icone: "Bird" },
-      { palavra: "Peixe", icone: "Fish" },
-      { palavra: "Coelho", icone: "Rabbit" },
-      { palavra: "Tartaruga", icone: "Turtle" },
+      { palavra: "Cachorro", icone: "Dog", imagem: "/flashcards/animais-do-cotidiano-1.png" },
+      { palavra: "Gato", icone: "Cat", imagem: "/flashcards/animais-do-cotidiano-2.png" },
+      { palavra: "Pássaro", icone: "Bird", imagem: "/flashcards/animais-do-cotidiano-3.png" },
+      { palavra: "Peixe", icone: "Fish", imagem: "/flashcards/animais-do-cotidiano-4.png" },
+      { palavra: "Coelho", icone: "Rabbit", imagem: "/flashcards/animais-do-cotidiano-5.png" },
+      { palavra: "Tartaruga", icone: "Turtle", imagem: "/flashcards/animais-do-cotidiano-6.png" },
     ],
     comoAplicar: [
       "Aponte para cada animal e peça para a criança nomeá-lo.",
@@ -79,12 +79,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Trabalhar vocabulário de alimentos do dia a dia, favorecendo escolhas, pedidos e comunicação funcional na rotina das refeições.",
     cartoes: [
-      { palavra: "Maçã", icone: "Apple" },
-      { palavra: "Banana", icone: "Banana" },
-      { palavra: "Pão", icone: "Croissant" },
-      { palavra: "Leite", icone: "Milk" },
-      { palavra: "Suco", icone: "CupSoda" },
-      { palavra: "Bolo", icone: "Cake" },
+      { palavra: "Maçã", icone: "Apple", imagem: "/flashcards/alimentos-infantis-1.png" },
+      { palavra: "Banana", icone: "Banana", imagem: "/flashcards/alimentos-infantis-2.png" },
+      { palavra: "Pão", icone: "Croissant", imagem: "/flashcards/alimentos-infantis-3.png" },
+      { palavra: "Leite", icone: "Milk", imagem: "/flashcards/alimentos-infantis-4.png" },
+      { palavra: "Suco", icone: "CupSoda", imagem: "/flashcards/alimentos-infantis-5.png" },
+      { palavra: "Bolo", icone: "Cake", imagem: "/flashcards/alimentos-infantis-6.png" },
     ],
     comoAplicar: [
       "Mostre dois alimentos e pergunte: 'Qual você quer?'.",
@@ -104,12 +104,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Desenvolver o reconhecimento e a nomeação de objetos comuns da casa e da escola, associando função e uso.",
     cartoes: [
-      { palavra: "Copo", icone: "CupSoda" },
-      { palavra: "Bola", icone: "CircleDot" },
-      { palavra: "Livro", icone: "Book" },
-      { palavra: "Cadeira", icone: "Armchair" },
-      { palavra: "Chave", icone: "Key" },
-      { palavra: "Telefone", icone: "Phone" },
+      { palavra: "Copo", icone: "CupSoda", imagem: "/flashcards/objetos-do-dia-a-dia-1.png" },
+      { palavra: "Bola", icone: "CircleDot", imagem: "/flashcards/objetos-do-dia-a-dia-2.png" },
+      { palavra: "Livro", icone: "Book", imagem: "/flashcards/objetos-do-dia-a-dia-3.png" },
+      { palavra: "Cadeira", icone: "Armchair", imagem: "/flashcards/objetos-do-dia-a-dia-4.png" },
+      { palavra: "Chave", icone: "Key", imagem: "/flashcards/objetos-do-dia-a-dia-5.png" },
+      { palavra: "Telefone", icone: "Phone", imagem: "/flashcards/objetos-do-dia-a-dia-6.png" },
     ],
     comoAplicar: [
       "Mostre o objeto e pergunte: 'O que é isso?'.",
@@ -129,12 +129,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Estimular a compreensão e o uso de verbos de ação, base para a construção de frases simples e do discurso descritivo.",
     cartoes: [
-      { palavra: "Comer", icone: "Utensils" },
-      { palavra: "Beber", icone: "CupSoda" },
-      { palavra: "Correr", icone: "Footprints" },
-      { palavra: "Pular", icone: "Rabbit" },
-      { palavra: "Dormir", icone: "Moon" },
-      { palavra: "Brincar", icone: "ToyBrick" },
+      { palavra: "Comer", icone: "Utensils", imagem: "/flashcards/verbos-de-acao-1.png" },
+      { palavra: "Beber", icone: "CupSoda", imagem: "/flashcards/verbos-de-acao-2.png" },
+      { palavra: "Correr", icone: "Footprints", imagem: "/flashcards/verbos-de-acao-3.png" },
+      { palavra: "Pular", icone: "Rabbit", imagem: "/flashcards/verbos-de-acao-4.png" },
+      { palavra: "Dormir", icone: "Moon", imagem: "/flashcards/verbos-de-acao-5.png" },
+      { palavra: "Brincar", icone: "ToyBrick", imagem: "/flashcards/verbos-de-acao-6.png" },
     ],
     comoAplicar: [
       "Mostre a figura e pergunte: 'O que ele está fazendo?'.",
@@ -154,12 +154,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Trabalhar o reconhecimento e a nomeação das partes do corpo, importante para autopercepção e seguir comandos simples.",
     cartoes: [
-      { palavra: "Cabeça", icone: "User" },
-      { palavra: "Olhos", icone: "Eye" },
-      { palavra: "Boca", icone: "Speech" },
-      { palavra: "Mão", icone: "Hand" },
-      { palavra: "Pé", icone: "Footprints" },
-      { palavra: "Orelha", icone: "Ear" },
+      { palavra: "Cabeça", icone: "User", imagem: "/flashcards/partes-do-corpo-1.png" },
+      { palavra: "Olhos", icone: "Eye", imagem: "/flashcards/partes-do-corpo-2.png" },
+      { palavra: "Boca", icone: "Speech", imagem: "/flashcards/partes-do-corpo-3.png" },
+      { palavra: "Mão", icone: "Hand", imagem: "/flashcards/partes-do-corpo-4.png" },
+      { palavra: "Pé", icone: "Footprints", imagem: "/flashcards/partes-do-corpo-5.png" },
+      { palavra: "Orelha", icone: "Ear", imagem: "/flashcards/partes-do-corpo-6.png" },
     ],
     comoAplicar: [
       "Aponte para a parte do corpo na figura e nomeie em voz alta.",
@@ -179,12 +179,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Trabalhar a produção e a percepção de sílabas simples (consoante + vogal), apoiando a articulação e a consciência silábica.",
     cartoes: [
-      { palavra: "BA", icone: "Volume2" },
-      { palavra: "CA", icone: "Volume2" },
-      { palavra: "DA", icone: "Volume2" },
-      { palavra: "LA", icone: "Volume2" },
-      { palavra: "MA", icone: "Volume2" },
-      { palavra: "PA", icone: "Volume2" },
+      { palavra: "BA", icone: "Volume2", imagem: "/flashcards/silabas-simples-1.png" },
+      { palavra: "CA", icone: "Volume2", imagem: "/flashcards/silabas-simples-2.png" },
+      { palavra: "DA", icone: "Volume2", imagem: "/flashcards/silabas-simples-3.png" },
+      { palavra: "LA", icone: "Volume2", imagem: "/flashcards/silabas-simples-4.png" },
+      { palavra: "MA", icone: "Volume2", imagem: "/flashcards/silabas-simples-5.png" },
+      { palavra: "PA", icone: "Volume2", imagem: "/flashcards/silabas-simples-6.png" },
     ],
     comoAplicar: [
       "Fale a sílaba devagar e peça para a criança repetir.",
@@ -204,12 +204,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Desenvolver a percepção de rimas e sons semelhantes, habilidade essencial para a consciência fonológica e a alfabetização.",
     cartoes: [
-      { palavra: "Gato", icone: "Cat" },
-      { palavra: "Pato", icone: "Bird" },
-      { palavra: "Bola", icone: "CircleDot" },
-      { palavra: "Sacola", icone: "ShoppingBag" },
-      { palavra: "Pão", icone: "Croissant" },
-      { palavra: "Mão", icone: "Hand" },
+      { palavra: "Gato", icone: "Cat", imagem: "/flashcards/consciencia-fonologica-rimas-1.png" },
+      { palavra: "Pato", icone: "Bird", imagem: "/flashcards/consciencia-fonologica-rimas-2.png" },
+      { palavra: "Bola", icone: "CircleDot", imagem: "/flashcards/consciencia-fonologica-rimas-3.png" },
+      { palavra: "Sacola", icone: "ShoppingBag", imagem: "/flashcards/consciencia-fonologica-rimas-4.png" },
+      { palavra: "Pão", icone: "Croissant", imagem: "/flashcards/consciencia-fonologica-rimas-5.png" },
+      { palavra: "Mão", icone: "Hand", imagem: "/flashcards/consciencia-fonologica-rimas-6.png" },
     ],
     comoAplicar: [
       "Fale duas palavras e pergunte: 'Elas terminam com o mesmo som?'.",
@@ -229,12 +229,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Trabalhar a ordem lógica de uma rotina, organizando o pensamento sequencial e o uso de marcadores temporais (primeiro, depois, por fim).",
     cartoes: [
-      { palavra: "Acordar", icone: "Sunrise" },
-      { palavra: "Escovar os dentes", icone: "Sparkles" },
-      { palavra: "Tomar café", icone: "Coffee" },
-      { palavra: "Ir à escola", icone: "Backpack" },
-      { palavra: "Brincar", icone: "ToyBrick" },
-      { palavra: "Dormir", icone: "Moon" },
+      { palavra: "Acordar", icone: "Sunrise", imagem: "/flashcards/sequencia-logica-de-rotina-1.png" },
+      { palavra: "Escovar os dentes", icone: "Sparkles", imagem: "/flashcards/sequencia-logica-de-rotina-2.png" },
+      { palavra: "Tomar café", icone: "Coffee", imagem: "/flashcards/sequencia-logica-de-rotina-3.png" },
+      { palavra: "Ir à escola", icone: "Backpack", imagem: "/flashcards/sequencia-logica-de-rotina-4.png" },
+      { palavra: "Brincar", icone: "ToyBrick", imagem: "/flashcards/sequencia-logica-de-rotina-5.png" },
+      { palavra: "Dormir", icone: "Moon", imagem: "/flashcards/sequencia-logica-de-rotina-6.png" },
     ],
     comoAplicar: [
       "Embaralhe os cartões e peça para a criança colocar na ordem certa.",
@@ -254,12 +254,12 @@ export const flashcards: Flashcard[] = [
     objetivo:
       "Oferecer apoio visual para pedidos e necessidades do dia a dia, favorecendo a comunicação funcional e a autonomia da criança.",
     cartoes: [
-      { palavra: "Quero", icone: "Hand" },
-      { palavra: "Não quero", icone: "Ban" },
-      { palavra: "Ajuda", icone: "LifeBuoy" },
-      { palavra: "Mais", icone: "Plus" },
-      { palavra: "Água", icone: "Droplet" },
-      { palavra: "Banheiro", icone: "DoorOpen" },
+      { palavra: "Quero", icone: "Hand", imagem: "/flashcards/comunicacao-funcional-1.png" },
+      { palavra: "Não quero", icone: "Ban", imagem: "/flashcards/comunicacao-funcional-2.png" },
+      { palavra: "Ajuda", icone: "LifeBuoy", imagem: "/flashcards/comunicacao-funcional-3.png" },
+      { palavra: "Mais", icone: "Plus", imagem: "/flashcards/comunicacao-funcional-4.png" },
+      { palavra: "Água", icone: "Droplet", imagem: "/flashcards/comunicacao-funcional-5.png" },
+      { palavra: "Banheiro", icone: "DoorOpen", imagem: "/flashcards/comunicacao-funcional-6.png" },
     ],
     comoAplicar: [
       "Deixe os cartões sempre visíveis e ao alcance da criança.",

@@ -1,11 +1,6 @@
-import * as Icons from "lucide-react"
+import Image from "next/image"
 import { Target, Trophy, MessageSquare, Lightbulb, Star, Heart, Scissors } from "lucide-react"
 import type { Flashcard } from "@/lib/flashcards"
-
-function CardIcon({ name, className }: { name: string; className?: string }) {
-  const Icon = (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[name] ?? Icons.Star
-  return <Icon className={className} />
-}
 
 // Cores que se alternam nos cartões de figuras, no estilo do cartaz
 const coresCartao = [
@@ -48,8 +43,14 @@ export function FlashcardSheet({ flashcard }: { flashcard: Flashcard }) {
                   key={i}
                   className="flex flex-col items-center overflow-hidden rounded-2xl border-2 border-dashed border-primary/25 bg-white"
                 >
-                  <div className="flex w-full items-center justify-center bg-brand-cream/70 py-6">
-                    <CardIcon name={c.icone} className="size-12 text-primary" />
+                  <div className="flex aspect-square w-full items-center justify-center bg-white p-2">
+                    <Image
+                      src={c.imagem || "/placeholder.svg"}
+                      alt={`Ilustração de ${c.palavra}`}
+                      width={200}
+                      height={200}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <span
                     className={`w-full ${coresCartao[i % coresCartao.length]} py-2 text-center font-heading text-base font-bold uppercase tracking-wide`}
