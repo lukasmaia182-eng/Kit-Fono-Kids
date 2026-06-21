@@ -1,7 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Download, Gift, Printer, FileText, ArrowRight } from "lucide-react"
+import { Download, Gift, Printer, FileText, ArrowRight, BookOpen, ListChecks, Layers } from "lucide-react"
 import { categorias, atividadesPorCategoria } from "@/lib/activities"
+import { flashcards } from "@/lib/flashcards"
 
 const bonuses = [
   { img: "/kit/b1.png", title: "Atividades para enviar para casa" },
@@ -32,6 +33,59 @@ export function AccessContent() {
                 </span>
                 <p className="text-sm leading-relaxed text-muted-foreground">{step.text}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Manual e orientações */}
+        <section className="mb-14" aria-labelledby="manual-title">
+          <div className="mb-8 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-blue/10 px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-wide text-brand-blue">
+              <BookOpen className="size-4" aria-hidden="true" />
+              Comece por aqui
+            </span>
+            <h2 id="manual-title" className="mt-3 font-heading text-2xl font-bold text-primary text-balance sm:text-3xl">
+              Manual e orientações de uso
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                href: "/seuacesso/manual",
+                icon: BookOpen,
+                eyebrow: "Manual de uso",
+                title: "Como usar o seu kit",
+                desc: "Objetivo do material, passo a passo de aplicação e aviso importante para usar com clareza e segurança.",
+              },
+              {
+                href: "/seuacesso/roteiro",
+                icon: ListChecks,
+                eyebrow: "Roteiro de aplicação",
+                title: "Roteiro rápido da sessão",
+                desc: "Os 5 momentos da sessão (abertura, modelagem, resposta, reforço e generalização) com dicas de impressão.",
+              },
+            ].map((item) => (
+              <article
+                key={item.href}
+                className="flex flex-col rounded-3xl border-2 border-brand-blue/15 bg-card p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-blue text-white">
+                  <item.icon className="size-6" aria-hidden="true" />
+                </span>
+                <span className="mt-4 font-heading text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                  {item.eyebrow}
+                </span>
+                <h3 className="mt-1 font-heading text-lg font-bold text-primary text-balance">{item.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                <Link
+                  href={item.href}
+                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 font-heading text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  Abrir e imprimir
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </article>
             ))}
           </div>
         </section>
@@ -114,6 +168,66 @@ export function AccessContent() {
             )
           })}
         </div>
+
+        {/* Flashcards */}
+        <section className="mt-16" aria-labelledby="flashcards-title">
+          <div className="mb-8 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-green/15 px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-wide text-brand-green-dark">
+              <Layers className="size-4" aria-hidden="true" />
+              20 itens · frente e verso
+            </span>
+            <h2
+              id="flashcards-title"
+              className="mt-3 font-heading text-2xl font-bold text-primary text-balance sm:text-3xl"
+            >
+              Flashcards para imprimir
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground text-pretty">
+              10 temas com frente (figuras) e verso (orientações de aplicação). Imprima, recorte e plastifique.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {flashcards.map((f) => (
+              <article
+                key={f.slug}
+                className="flex flex-col rounded-3xl border-2 border-primary/10 bg-card p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-heading text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                    Itens {String(f.numeroFrente).padStart(2, "0")}–{String(f.numeroVerso).padStart(2, "0")}
+                  </span>
+                  <span className={`rounded-full ${f.cor} px-3 py-1 font-heading text-[0.65rem] font-bold uppercase tracking-wide text-white`}>
+                    Frente + verso
+                  </span>
+                </div>
+                <h3 className="mt-2 font-heading text-lg font-bold text-primary text-balance">{f.tema}</h3>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {f.cartoes.slice(0, 4).map((c) => (
+                    <span
+                      key={c.palavra}
+                      className="rounded-full bg-brand-soft px-2.5 py-1 font-heading text-[0.7rem] font-bold text-muted-foreground"
+                    >
+                      {c.palavra}
+                    </span>
+                  ))}
+                  {f.cartoes.length > 4 && (
+                    <span className="rounded-full bg-brand-soft px-2.5 py-1 font-heading text-[0.7rem] font-bold text-muted-foreground">
+                      +{f.cartoes.length - 4}
+                    </span>
+                  )}
+                </div>
+                <Link
+                  href={`/seuacesso/flashcard/${f.slug}`}
+                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 font-heading text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  Abrir flashcard
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
 
         {/* Cartazes */}
         <section className="mt-16" aria-labelledby="cartazes-title">
